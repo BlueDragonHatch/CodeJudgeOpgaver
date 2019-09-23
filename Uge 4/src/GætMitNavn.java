@@ -16,6 +16,8 @@ public class GætMitNavn {
                 System.out.println("Mit navn er før i alfabetet.");
             else if (val < 0)
                 System.out.println("Mit navn er efter i alfabetet.");
+            else
+                System.out.println("You Fucked up");
         }
     }
 }
