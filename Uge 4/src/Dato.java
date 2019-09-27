@@ -1,6 +1,6 @@
 public class Dato {
-    private static final String[] monthNames = new String[] {"Januar","Februar","Marts","April","Maj","Juni",
-            "Juli","August","September","Oktober","November","December"};
+    private static final String[] monthNames = new String[] {"januar","februar","marts","april","maj","juni",
+            "juli","august","september","oktober","november","december"};
 
     int year;
     int month;
@@ -8,7 +8,7 @@ public class Dato {
 
     public Dato(int year, int month, int day){
         this.year = year;
-        this.month = Math.max(Math.min(month, 11), 0);
+        this.month = Math.max(Math.min(month, 12), 1);
         this.day = day;
     }
 
@@ -17,10 +17,10 @@ public class Dato {
     }
 
     public String danishText(){
-        return day + ". " + monthNames[month] + " " + year;
+        return day + ". " + monthNames[month - 1] + " " + year;
     }
 
     public String iso(){
-        return year + "-" + month + "-" + day;
+        return year + "-" + (month < 10 ? month : "0" + month) + "-" + (day < 10 ? day : "0" + day);
     }
 }
